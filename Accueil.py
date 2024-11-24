@@ -22,6 +22,7 @@ st.markdown("""
     - Pour plus de détails sur le fonctionnement précis de l'outil, consultez la section ci-dessous.
 """)
 
+st.page_link("pages/Convertisseur_CSV.py", label="Accéder au convertisseur", icon="📁")
 
 with open("./config/Exemple.csv", "rb") as file:
     btn = st.download_button(
