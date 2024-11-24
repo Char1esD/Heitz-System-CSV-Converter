@@ -8,7 +8,7 @@ from streamlit_player import st_player
 # Interface Streamlit
 st.set_page_config(page_title="Accueil", page_icon=":house:")
 
-st.title("Formatteur CSV pour Listmonk")
+st.title("Convertisseur CSV pour Listmonk")
 st.markdown("""
     ## Bienvenue dans l'outil de conversion CSV
     Cette application vous permet de convertir un fichier CSV contenant des informations telles que l'email, le prénom et le nom, en un format compatible avec l'importation dans Listmonk. Elle a été conçue à l'origine pour fonctionner avec le logiciel Heiz System.
