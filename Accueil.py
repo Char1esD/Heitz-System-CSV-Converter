@@ -10,16 +10,18 @@ st.set_page_config(page_title="Accueil", page_icon=":house:")
 
 st.title("Formatteur CSV pour Listmonk")
 st.markdown("""
-## Bienvenue dans l'outil de conversion CSV
-Cette application vous permet de convertir un fichier CSV contenant des informations telles que l'email, le prénom et le nom en un format adapté pour l'importation dans Listmonk. Il a, à la base, été conçu pour fonctionner avec le logiciel Heiz System.
+    ## Bienvenue dans l'outil de conversion CSV
+    Cette application vous permet de convertir un fichier CSV contenant des informations telles que l'email, le prénom et le nom, en un format compatible avec l'importation dans Listmonk. Elle a été conçue à l'origine pour fonctionner avec le logiciel Heiz System.
 
-### Instructions
-- Créer un export CSV via Heiz System.
-- Assurez-vous d'exporter les informations suivantes : email, prénom et nom.
-- L'ordre a de l'importance uniquement pour l'email, qui doit être placé en premier afin de respecter la structure de Listmonk. Tout cela est modifiable dans les paramètres d'exportation de Heitz System
-- Une fois votre export terminé, uploader votre fichier dans le convertisseur
-- Le convertisseur vous donnera un fichier CSV prêt à être importé directement dans Listmonk
-- Pour avoir plus de détail sur le fonctionnement exact de l'outil, vous pouvez consulter la section plus bas""")
+    ### Instructions
+    - Créez un export CSV depuis Heitz System.
+    - Assurez-vous d'inclure les informations suivantes : email, prénom et nom.
+    - L'ordre des colonnes n'a d'importance que pour l'email, qui doit impérativement être placé en première position afin de respecter la structure requise par Listmonk. Vous pouvez ajuster cet ordre dans les paramètres d'exportation de Heiz System.
+    - Une fois l'export terminé, téléchargez votre fichier dans le convertisseur.
+    - Le convertisseur générera un fichier CSV prêt à être importé directement dans Listmonk.
+    - Pour plus de détails sur le fonctionnement précis de l'outil, consultez la section ci-dessous.
+""")
+
 
 with open("./config/Exemple.csv", "rb") as file:
     btn = st.download_button(
@@ -34,14 +36,12 @@ video_bytes = video_file.read()
 st.video(video_bytes)
 
 st.markdown("""
-### Fonctionnement
-- L'outil vérifiera la présence des colonnes `email`, `prenom`, et `nom` dans votre fichier CSV.
-- ATTENTION, il faut que la première colonne soit `email` pour que l'outil fonctionne correctement.
-- Le fichier sera modifié afin de répondre au besoin de Listmonk pour l'importation. L'outil créera également l'entête `email,name`.
-- Puis, afin d'automatiser le procéssus au maximum, le fichier sera automatiquement encodé en UTF-8 le rendant directement importable dans Listmonk.
+    ### Fonctionnement
+    - L'outil vérifiera la présence des colonnes `email`, `prénom` et `nom` dans votre fichier CSV.
+    - ATTENTION : la première colonne doit impérativement être `email` pour que l'outil fonctionne correctement.
+    - Le fichier sera ajusté pour répondre aux exigences de Listmonk en matière d'importation. L'outil ajoutera également l'en-tête `email,name`.
+    - Enfin, pour automatiser le processus au maximum, le fichier sera automatiquement encodé en UTF-8, le rendant directement importable dans Listmonk.
 
-## Contact
-En cas de problème, de question ou de demande d'ajout de fonctionnalité, vous pouvez [me contacter ici](https://github.com/Char1esD/Heitz-System-CSV-Converter/issues/new/choose).
+    ## Contact
+    En cas de problème, de question ou de demande de fonctionnalité, vous pouvez [me contacter ici](https://github.com/Char1esD/Heitz-System-CSV-Converter/issues/new/choose).
 """, unsafe_allow_html=True)
-
-
