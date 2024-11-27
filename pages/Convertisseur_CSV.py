@@ -2,7 +2,7 @@ import streamlit as st
 from datetime import datetime
 import pandas as pd
 import unicodedata
-import chardet  # Importer la bibliothèque chardet pour détecter l'encodage
+import chardet
 
 def detect_encoding(file_path):
     with open(file_path, 'rb') as f:
@@ -20,10 +20,8 @@ def normalize_column_names(columns):
 
 def formater_csv(file_csv, output_csv):
     try:
-        # Détecter l'encodage
         encoding = detect_encoding(file_csv)
         
-        # Lire le fichier avec l'encodage détecté
         df = pd.read_csv(file_csv, sep=None, engine='python', encoding=encoding)
     except Exception as e:
         st.error(f"Erreur lors de la lecture du fichier : {e}")
